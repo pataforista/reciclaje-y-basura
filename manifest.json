@@ -11,6 +11,9 @@
   "background_color": "#fdfcf0",
   "theme_color": "#fdfcf0",
   "orientation": "portrait-primary",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "categories": [
     "education",
     "utilities",
