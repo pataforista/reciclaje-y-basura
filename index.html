@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- PWA -->
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#1b5e20" />
   <meta name="description" content="Guía doméstica para separar residuos en CDMX. Funciona offline." />
-  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png" />
 
   <!-- iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,7 +18,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -28,7 +28,7 @@
   <div id="sideMenu" class="side-menu hidden">
     <div class="menu-header">
       <h2>Consejos Rápidos</h2>
-      <button id="closeMenuBtn" class="close-btn">×</button>
+      <button id="closeMenuBtn" class="close-btn" onclick="toggleMenu(false)">×</button>
     </div>
     <div id="sideMenuContent" class="menu-content">
       <!-- Dynamic Content -->
@@ -36,15 +36,20 @@
   </div>
 
   <header>
-    <h1 id="appTitle" style="cursor:pointer;">♻️ Basura CDMX</h1>
-    <p class="subtitle">Guía doméstica · Offline</p>
+    <div style="display:flex; align-items:center;">
+      <button id="homeBtn" class="home-btn" onclick="homeView()" aria-label="Ir a Inicio">🏠</button>
+      <div>
+        <h1 id="appTitle" style="cursor:pointer;" onclick="homeView()">Basura CDMX</h1>
+        <p class="subtitle">Guía doméstica · Offline</p>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <button data-cat="organicos" class="btn green">🟢 Orgánicos</button>
-    <button data-cat="reciclables" class="btn gray">🔘 Reciclables</button>
-    <button data-cat="no_reciclables" class="btn orange">🟠 No reciclables</button>
-    <button data-cat="manejo_especial" class="btn blue">🔵 Manejo Especial</button>
+    <button data-cat="organicos" class="btn green">Orgánicos</button>
+    <button data-cat="reciclables" class="btn gray">Reciclables</button>
+    <button data-cat="no_reciclables" class="btn orange">No reciclables</button>
+    <button data-cat="manejo_especial" class="btn blue">Manejo Especial</button>
   </nav>
 
   <section class="search">
@@ -58,18 +63,23 @@
 
   <footer>
     <p>CDMX · Guía doméstica · Funciona sin internet</p>
+    <div style="margin: 0.5rem 0; font-size: 0.8rem;">
+      <a href="#"
+        onclick="alert('Esta aplicación no recopila, almacena ni comparte ningún dato personal. Funciona completamente offline.')"
+        style="color: #666; text-decoration: underline;">Política de Privacidad</a>
+    </div>
     <small>Contacto y correcciones: CACB (miniappsminisoluciones@gmail.com)</small>
   </footer>
 
   <!-- App -->
-  <script src="/app.js"></script>
+  <script src="app.js"></script>
 
   <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", async () => {
         try {
-          await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+          await navigator.serviceWorker.register("sw.js", { scope: "./" });
           console.log("SW registrado ✅");
         } catch (e) {
           console.warn("SW no pudo registrarse", e);

@@ -11,7 +11,7 @@ const content = document.getElementById("content");
 const searchInput = document.getElementById("searchInput");
 
 // Root (más estable para PWA/TWA)
-const DB_URL = "/db.json";
+const DB_URL = "db.json";
 
 let dbCategories = [];
 let flatItems = [];
@@ -72,6 +72,7 @@ function toggleMenu(show) {
     }, 400);
   }
 }
+window.toggleMenu = toggleMenu; // Global exposure for onclick
 
 // ---------- Widget Logic ----------
 function getDayName(dayIndex) {
@@ -106,9 +107,9 @@ function renderWidget() {
 
 
 function renderRulesInMenu() {
-  // Fix: Clear previous content to avoid "<!-- Dynamic Content -->" blocking the empty check
-  // or simply force re-render if it looks "empty" (less than 50 chars).
-  if (sideMenuContent.innerHTML.length > 50) return;
+  // Always render to be safe
+  sideMenuContent.innerHTML = "";
+
 
   const rulesHtml = (quickRules || [])
     .map((r, i) => {
@@ -260,8 +261,37 @@ function createCard(item, index = 0) {
   return div;
 }
 
+const AVATAR_EXPLANATIONS = {
+  "organicos": "¡Hola! Aquí van residuos de origen natural que se descomponen. Úsalos para composta. 🌱",
+  "reciclables": "Estos materiales pueden tener una segunda vida. ¡Recuerda entregarlos limpios, secos y aplastados! ♻️",
+  "no_reciclables": "Residuos difíciles de reciclar o muy contaminados. Van directo al relleno sanitario o coprocesamiento. 🟠",
+  "manejo_especial": "¡Cuidado! Estos objetos requieren un tratamiento especial por su tamaño o componentes. No los tires con lo demás. 🛋️"
+};
+
 function renderList(items) {
   content.innerHTML = "";
+
+  // Show Avatar if rendering a specific category
+  if (items.length > 0 && items[0].categoryId && AVATAR_EXPLANATIONS[items[0].categoryId]) {
+    const catId = items[0].categoryId;
+    const explanation = AVATAR_EXPLANATIONS[catId];
+
+    // Trash Can Avatar HTML
+    const avatarHtml = `
+      <div class="avatar-container">
+        <div class="avatar-face">🗑️</div>
+        <div class="speech-bubble">
+          <strong>Tip del Bote:</strong><br>
+          ${explanation}
+        </div>
+      </div>
+    `;
+    // Insert simple string wrapper
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = avatarHtml;
+    content.appendChild(wrapper);
+  }
+
   if (!items || items.length === 0) {
     setHTML(`<p class="hint">No se encontraron resultados.</p>`);
     return;

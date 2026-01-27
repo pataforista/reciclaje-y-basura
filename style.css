@@ -1,10 +1,30 @@
 :root {
-  --bg: #f4f7f2;
-  --text: #1c1c1c;
-  --green: #2e7d32;
-  --gray: #455a64;
-  --orange: #ef6c00;
-  --stone: #e0e5dd;
+  /* Moomin Palette */
+  --bg: #fdfcf0;
+  /* Warm Cream / Old Paper */
+  --text: #2b2b2b;
+  /* Soft Black */
+
+  /* Pastels */
+  --green: #88c999;
+  /* Soft Meadow */
+  --green-dark: #66a176;
+
+  --blue: #9bc4e2;
+  /* Moominhouse Blue */
+  --blue-dark: #7aa5c4;
+
+  --orange: #ffb7b2;
+  /* Soft Coral */
+  --orange-dark: #e0928e;
+
+  --gray: #d3d3d3;
+  /* Foggy Gray */
+  --gray-dark: #b0b0b0;
+
+  --card-bg: #ffffff;
+  --shadow-soft: 0 4px 20px -5px rgba(136, 160, 185, 0.15);
+  /* Blue-ish shadow */
 }
 
 * {
@@ -13,112 +33,52 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-header {
-  padding: calc(1rem + env(safe-area-inset-top)) 1rem 1rem 1rem;
-  background: var(--green);
-  color: white;
+/* Typography override for headings */
+h1,
+h2,
+h3,
+.widget h2 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  /* Storybook feel */
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.subtitle {
+/* --- Sticky Glossy Header (Moomin Style) --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 252, 240, 0.92);
+  /* Cream Glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: calc(env(safe-area-inset-top) + 0.8rem) 1rem 0.8rem 1rem;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.05);
+  /* Dashed separation */
+  box-shadow: none;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--text);
+}
+
+header .subtitle {
+  color: #667;
   font-size: 0.9rem;
+  font-family: system-ui, sans-serif;
+  font-style: italic;
   opacity: 0.9;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-
-/* --- Improved Visuals (v1.3) --- */
-
-/* Active state for buttons */
-.btn.active {
-  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-}
-
-/* Card hierarchy */
-.card {
-  background: white;
-  /* Cleaner look */
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  /* Subtle shadow */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-/* Spacing between blocks */
-.spacer-block {
-  margin-top: 2rem;
-}
-
-/* Better mobile buttons */
-/* --- Premium Visuals (v2.0) --- */
-
-/* 1. Electric Search Bar */
-.search {
-  padding: 0 1rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.search input {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  /* Larger touch target */
-  font-size: 1rem;
-  border-radius: 24px;
-  /* More rounded */
-  border: 2px solid #ccc;
-  background: white;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* The "Electric" Glow */
-.search input:focus-visible {
-  outline: none;
-  border-color: var(--green);
-  box-shadow:
-    0 0 0 4px rgba(46, 125, 50, 0.1),
-    0 0 15px rgba(46, 125, 50, 0.3),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  transform: scale(1.01);
-}
-
-/* 2. Animated Navigation */
-/* --- Premium Visuals (v4.0 - Glass & Gradients) --- */
-
-:root {
-  --bg-color: #f8fafc;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
-}
-
-body {
-  background: var(--bg-color);
-  color: #1e293b;
-  /* Slate 800 */
-}
-
-/* 1. Grid Navigation with Gradients */
 nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -127,6 +87,7 @@ nav {
   justify-content: center;
 }
 
+/* Buttons (Pastel Pills) */
 .btn {
   width: 100%;
   min-height: 52px;
@@ -135,99 +96,120 @@ nav {
   justify-content: center;
   text-align: center;
   padding: 0.8rem;
-  border: none;
-  border-radius: 16px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  /* Super rounded */
   font-size: 0.95rem;
   font-weight: 700;
-  /* Bolder text */
-  letter-spacing: 0.02em;
   cursor: pointer;
-  color: white;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: #fff;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  /* Cute 3D effect */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  /* Legibility */
 }
 
-/* Premium Gradients */
+/* Pastel Button Colors */
 .green {
-  background: linear-gradient(135deg, #10b981, #047857);
+  background: var(--green);
+  color: #fff;
 }
 
-/* Emerald */
+.btn.green:hover {
+  background: var(--green-dark);
+}
+
 .gray {
-  background: linear-gradient(135deg, #64748b, #334155);
+  background: var(--gray);
+  color: #555;
+  text-shadow: none;
 }
 
-/* Slate */
+.btn.gray:hover {
+  background: var(--gray-dark);
+}
+
 .orange {
-  background: linear-gradient(135deg, #f97316, #c2410c);
+  background: var(--orange);
+  color: #fff;
 }
 
-/* Orange */
+.btn.orange:hover {
+  background: var(--orange-dark);
+}
+
 .blue {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: var(--blue);
+  color: #fff;
 }
 
-/* Royal Blue */
+.btn.blue:hover {
+  background: var(--blue-dark);
+}
 
-/* Interaction: Scale Down & Brighten */
 .btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn:active {
-  transform: scale(0.96);
+  transform: translateY(2px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn.active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   filter: brightness(0.95);
 }
 
-/* Active State */
-.btn.active {
-  transform: scale(1.02);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4), 0 10px 25px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
-
-/* 2. Glassmorphism Cards & Scroll Reveal */
+/* Cards (Rounded Storybook) */
 .card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  /* Glass effect */
-  border-radius: 20px;
-  padding: 1.4rem;
+  background: white;
+  border-radius: 24px;
+  /* Soft corners */
+  padding: 1.5rem;
   margin-bottom: 1.2rem;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid #f0f0f0;
+  /* Friendly border */
 
-  /* Scroll Reveal Defaults */
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateY(20px);
+  animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Header & Typography */
 .card h3 {
-  margin: 0 0 0.6rem 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0f172a;
-  /* Slate 900 */
+  color: var(--text);
+  margin-bottom: 0.5rem;
 }
 
-.note {
-  font-size: 0.9rem;
-  color: #475569;
-  /* Slate 600 */
-  line-height: 1.5;
+/* Search Bar (Floating Cloud) */
+.search {
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: 2px solid var(--gray);
+  background: white;
+  transition: all 0.3s;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-family: inherit;
+  color: var(--text);
+}
+
+.search input:focus-visible {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(136, 201, 153, 0.2);
 }
 
 /* 3. Collection Widget */
@@ -237,8 +219,8 @@ nav {
   padding: 1.5rem;
   margin: 1rem 1rem 2rem 1rem;
   text-align: center;
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-soft);
+  border: 2px solid #f0f0f0;
   animation: slideDown 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
@@ -257,22 +239,98 @@ nav {
 .widget h2 {
   margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
-  color: #64748b;
-  font-weight: 600;
+  color: var(--text);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .widget .today-info {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: #1e293b;
-  background: linear-gradient(135deg, #1e293b, #475569);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  color: var(--green-dark);
 }
 
-/* Side Menu Stagger Fix */
+/* Side Menu */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  /* Lighter backdrop */
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 340px;
+  height: 100%;
+  background: var(--bg);
+  /* Cream menu */
+  z-index: 100;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+  /* Softer shadow */
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.visible {
+  transform: translateX(0);
+}
+
+.menu-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 2px dashed #eee;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.close-btn {
+  background: white;
+  border: 1px solid #ddd;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #555;
+  line-height: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.menu-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
 .menu-item {
   opacity: 0;
   transform: translateX(30px);
@@ -284,50 +342,67 @@ nav {
   transform: translateX(0);
 }
 
-
-/* Delays generated via JS or nth-child helper if static */
-
-/* 3. Staggered Card Entry */
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Avatar (Soft) */
+.avatar-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem 0;
+  animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-.card {
+.avatar-face {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.1));
+}
+
+.speech-bubble {
   background: white;
-  border-radius: 16px;
   padding: 1.2rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  /* Animation default */
-  animation: slideUpFade 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  border-radius: 20px;
+  border-bottom-left-radius: 2px;
+  border: 2px solid #f0f0f0;
+  box-shadow: var(--shadow-soft);
+  font-family: 'Georgia', serif;
+  /* Story voice */
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  flex: 1;
 }
 
-.card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
+/* Badges */
+.badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
-/* Colors helpers */
-.blue {
-  background: #1565c0;
+.badge.green {
+  background: var(--green);
+  color: white;
+}
+
+.badge.gray {
+  background: var(--gray);
+  color: #555;
+}
+
+.badge.orange {
+  background: var(--orange);
+  color: white;
 }
 
 .badge.azul {
-  background: #1565c0;
+  background: var(--blue);
+  color: white;
+  text-shadow: none;
 }
 
 .border-azul {
-  border-left: 5px solid #1565c0;
+  border-left-color: var(--blue);
 }
 
 /* Refined FAQ */
@@ -336,15 +411,71 @@ nav {
   padding: 1rem;
   border-radius: 12px;
   margin: 0.8rem 0;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-  transition: box-shadow 0.2s;
+  border: 2px solid #f0f0f0;
+  box-shadow: none;
 }
 
 .faq[open] {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--green);
 }
 
 .spacer-block {
   margin-top: 2.5rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Utils */
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header Home Button */
+.home-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.home-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Note text */
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
 }
