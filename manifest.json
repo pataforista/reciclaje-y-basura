@@ -57,5 +57,20 @@
       "form_factor": "narrow",
       "label": "Búsqueda de residuo"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "📅 ¿Qué toca hoy?",
+      "short_name": "Hoy",
+      "description": "Ver qué basura recogen hoy",
+      "url": "/index.html?source=shortcut",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }
