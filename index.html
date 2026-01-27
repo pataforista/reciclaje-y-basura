@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-MX">
+
 <head>
   <meta charset="UTF-8" />
   <title>Basura CDMX</title>
@@ -14,57 +15,69 @@
   <!-- iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="mobile-web-app-capable" content="yes" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
 
-<header>
-  <h1>♻️ Basura CDMX</h1>
-  <p class="subtitle">Guía doméstica · Offline</p>
-</header>
+  <!-- Side Menu Overlay -->
+  <div id="sideMenuBackdrop" class="backdrop hidden"></div>
+  <div id="sideMenu" class="side-menu hidden">
+    <div class="menu-header">
+      <h2>Consejos Rápidos</h2>
+      <button id="closeMenuBtn" class="close-btn">×</button>
+    </div>
+    <div id="sideMenuContent" class="menu-content">
+      <!-- Dynamic Content -->
+    </div>
+  </div>
 
-<nav>
-  <button data-cat="organicos" class="btn green">🟢 Orgánicos</button>
-  <button data-cat="reciclables" class="btn gray">🔘 Reciclables</button>
-  <button data-cat="no_reciclables" class="btn orange">🟠 No reciclables</button>
-</nav>
+  <header>
+    <h1 id="appTitle" style="cursor:pointer;">♻️ Basura CDMX</h1>
+    <p class="subtitle">Guía doméstica · Offline</p>
+  </header>
 
-<section class="search">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Buscar residuo (ej. té, perro, PET)"
-    aria-label="Buscar residuo"
-    autocomplete="off"
-  />
-</section>
+  <nav>
+    <button data-cat="organicos" class="btn green">🟢 Orgánicos</button>
+    <button data-cat="reciclables" class="btn gray">🔘 Reciclables</button>
+    <button data-cat="no_reciclables" class="btn orange">🟠 No reciclables</button>
+    <button data-cat="manejo_especial" class="btn blue">🔵 Manejo Especial</button>
+  </nav>
 
-<main id="content">
-  <p class="hint">Selecciona una categoría o usa el buscador.</p>
-</main>
+  <section class="search">
+    <input type="text" id="searchInput" placeholder="Buscar residuo (ej. té, perro, PET)" aria-label="Buscar residuo"
+      autocomplete="off" />
+  </section>
 
-<footer>
-  <small>CDMX · Uso doméstico · Funciona sin internet. CACB miniappsminisoluciones@gmail.com</small>
-</footer>
+  <main id="content">
+    <p class="hint">Selecciona una categoría o usa el buscador.</p>
+  </main>
 
-<!-- App -->
-<script src="/app.js"></script>
+  <footer>
+    <p>CDMX · Guía doméstica · Funciona sin internet</p>
+    <small>Contacto y correcciones: CACB (miniappsminisoluciones@gmail.com)</small>
+  </footer>
 
-<!-- Service Worker -->
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      try {
-        await navigator.serviceWorker.register("/sw.js", { scope: "/" });
-        console.log("SW registrado ✅");
-      } catch (e) {
-        console.warn("SW no pudo registrarse", e);
-      }
-    });
-  }
-</script>
+  <!-- App -->
+  <script src="/app.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", async () => {
+        try {
+          await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+          console.log("SW registrado ✅");
+        } catch (e) {
+          console.warn("SW no pudo registrarse", e);
+        }
+      });
+    }
+  </script>
 
 </body>
+
 </html>

@@ -7,7 +7,9 @@
   --stone: #e0e5dd;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -35,93 +37,314 @@ nav {
   padding: 1rem;
 }
 
-.btn {
-  flex: 1 1 180px;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  color: white;
+/* --- Improved Visuals (v1.3) --- */
+
+/* Active state for buttons */
+.btn.active {
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
-.btn:focus-visible {
-  outline: 3px solid rgba(0,0,0,0.35);
-  outline-offset: 2px;
+/* Card hierarchy */
+.card {
+  background: white;
+  /* Cleaner look */
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.green { background: var(--green); }
-.gray { background: var(--gray); }
-.orange { background: var(--orange); }
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
 
+/* Spacing between blocks */
+.spacer-block {
+  margin-top: 2rem;
+}
+
+/* Better mobile buttons */
+/* --- Premium Visuals (v2.0) --- */
+
+/* 1. Electric Search Bar */
 .search {
   padding: 0 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .search input {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.8rem 1rem;
+  /* Larger touch target */
   font-size: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  border-radius: 24px;
+  /* More rounded */
+  border: 2px solid #ccc;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* The "Electric" Glow */
 .search input:focus-visible {
-  outline: 3px solid rgba(46,125,50,0.35);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--green);
+  box-shadow:
+    0 0 0 4px rgba(46, 125, 50, 0.1),
+    0 0 15px rgba(46, 125, 50, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: scale(1.01);
 }
 
-main {
+/* 2. Animated Navigation */
+/* --- Premium Visuals (v4.0 - Glass & Gradients) --- */
+
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  background: var(--bg-color);
+  color: #1e293b;
+  /* Slate 800 */
+}
+
+/* 1. Grid Navigation with Gradients */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
   padding: 1rem;
-  max-width: 980px;
-  margin: 0 auto;
+  justify-content: center;
 }
 
-.hint {
+.btn {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 16px;
   font-size: 0.95rem;
-  opacity: 0.85;
+  font-weight: 700;
+  /* Bolder text */
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  /* Legibility */
 }
 
+/* Premium Gradients */
+.green {
+  background: linear-gradient(135deg, #10b981, #047857);
+}
+
+/* Emerald */
+.gray {
+  background: linear-gradient(135deg, #64748b, #334155);
+}
+
+/* Slate */
+.orange {
+  background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+/* Orange */
+.blue {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+/* Royal Blue */
+
+/* Interaction: Scale Down & Brighten */
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  filter: brightness(0.95);
+}
+
+/* Active State */
+.btn.active {
+  transform: scale(1.02);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4), 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* 2. Glassmorphism Cards & Scroll Reveal */
 .card {
-  background: var(--stone);
-  border-radius: 12px;
-  padding: 0.9rem;
-  margin-bottom: 0.7rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  /* Glass effect */
+  border-radius: 20px;
+  padding: 1.4rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  /* Scroll Reveal Defaults */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header & Typography */
 .card h3 {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.6rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  /* Slate 900 */
 }
 
 .note {
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  color: #475569;
+  /* Slate 600 */
+  line-height: 1.5;
 }
 
-footer {
+/* 3. Collection Widget */
+.widget {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  margin: 1rem 1rem 2rem 1rem;
   text-align: center;
-  padding: 0.9rem 0.8rem;
-  font-size: 0.75rem;
-  opacity: 0.7;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: slideDown 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* --- Extras UI (v1.1) --- */
-.card-header { display:flex; align-items:flex-start; justify-content:space-between; gap:.6rem; }
-.badge { padding:4px 8px; border-radius:999px; color:#fff; font-size:.72rem; letter-spacing:.02em; white-space:nowrap; }
-.badge.verde { background: var(--green); }
-.badge.gris { background: var(--gray); }
-.badge.naranja { background: var(--orange); }
-.badge.azul { background: #1565c0; }
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 
-.border-verde { border-left:5px solid var(--green); }
-.border-gris { border-left:5px solid var(--gray); }
-.border-naranja { border-left:5px solid var(--orange); }
-.border-azul { border-left:5px solid #1565c0; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-.rules { padding-left: 0; }
-.rules li { margin-bottom: .6rem; }
+.widget h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-.faq { background: rgba(0,0,0,0.03); padding: .6rem .7rem; border-radius: 12px; margin: .5rem 0; }
-.faq summary { cursor: pointer; font-weight: 600; }
+.widget .today-info {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  background: linear-gradient(135deg, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.error { background: #ffecec; border: 1px solid #ffb3b3; padding: .8rem; border-radius: 12px; }
+/* Side Menu Stagger Fix */
+.menu-item {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.5s ease-out;
+}
+
+.side-menu.visible .menu-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Delays generated via JS or nth-child helper if static */
+
+/* 3. Staggered Card Entry */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  /* Animation default */
+  animation: slideUpFade 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+/* Colors helpers */
+.blue {
+  background: #1565c0;
+}
+
+.badge.azul {
+  background: #1565c0;
+}
+
+.border-azul {
+  border-left: 5px solid #1565c0;
+}
+
+/* Refined FAQ */
+.faq {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 0.8rem 0;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.2s;
+}
+
+.faq[open] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.spacer-block {
+  margin-top: 2.5rem;
+}

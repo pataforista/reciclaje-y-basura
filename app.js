@@ -1,9 +1,10 @@
 /* ================================
-   Basura CDMX — app.js (v1.2)
+   Basura CDMX — app.js (v1.3)
    - Root-ready (rutas absolutas)
    - Sin doble registro de SW (lo hace index.html)
    - Fix esc() chaining
    - Fetch compatible con SW cache
+   - Staggered Side Menu & Grid Nav
    ================================ */
 
 const content = document.getElementById("content");
@@ -33,7 +34,6 @@ function normalize(s) {
     .toLowerCase()
     .normalize("NFD");
 
-  // Fallback por si el motor no soporta \p{Diacritic}
   try {
     return base.replace(/\p{Diacritic}/gu, "");
   } catch {
@@ -45,23 +45,95 @@ function setHTML(html) {
   content.innerHTML = html;
 }
 
-function homeView() {
+// ---------- side menu ----------
+const sideMenu = document.getElementById("sideMenu");
+const sideMenuBackdrop = document.getElementById("sideMenuBackdrop");
+const sideMenuContent = document.getElementById("sideMenuContent");
+const closeMenuBtn = document.getElementById("closeMenuBtn");
+const appTitle = document.getElementById("appTitle");
+
+function toggleMenu(show) {
+  if (show) {
+    sideMenu.classList.remove("hidden");
+    sideMenuBackdrop.classList.remove("hidden");
+    setTimeout(() => {
+      sideMenu.classList.add("visible");
+      sideMenuBackdrop.classList.add("visible");
+    }, 10);
+    renderRulesInMenu();
+  } else {
+    sideMenu.classList.remove("visible");
+    sideMenuBackdrop.classList.remove("visible");
+    setTimeout(() => {
+      if (!sideMenu.classList.contains("visible")) {
+        sideMenu.classList.add("hidden");
+        sideMenuBackdrop.classList.add("hidden");
+      }
+    }, 400);
+  }
+}
+
+// ---------- Widget Logic ----------
+function getDayName(dayIndex) {
+  const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  return days[dayIndex];
+}
+
+function renderWidget() {
+  const todayIndex = new Date().getDay();
+  const todayName = getDayName(todayIndex);
+
+  // Find which categories collect today
+  const todaysCats = dbCategories.filter(cat =>
+    cat.collection_days.includes(todayName)
+  ).map(c => c.label);
+
+  const message = todaysCats.length > 0
+    ? `Toca: ${todaysCats.join(", ")}`
+    : "Hoy no hay recolección oficial.";
+
+  // Insert Widget at top of Content
+  const widget = document.createElement("div");
+  widget.className = "widget";
+  widget.innerHTML = `
+    <h2>📅 Hoy es ${todayName}</h2>
+    <div class="today-info">${message}</div>
+  `;
+
+  // Prepend to content (or handle in homeView)
+  return widget.outerHTML;
+}
+
+
+function renderRulesInMenu() {
+  // Fix: Clear previous content to avoid "<!-- Dynamic Content -->" blocking the empty check
+  // or simply force re-render if it looks "empty" (less than 50 chars).
+  if (sideMenuContent.innerHTML.length > 50) return;
+
   const rulesHtml = (quickRules || [])
-    .map(r => {
+    .map((r, i) => {
       const bulletsList = (r.bullets || [])
         .map(b => `• ${esc(b)}`)
         .join("<br>");
 
+      const delay = i * 150; // Slower stagger for drama
       return `
-        <li style="margin-bottom: 1rem;">
-          <strong>${esc(r.title)}</strong>
-          <div class="note" style="margin-top: 0.4rem; padding-left: 0.5rem; line-height: 1.4;">
-            ${bulletsList}
-          </div>
-        </li>
+        <div class="menu-item" style="transition-delay: ${delay}ms">
+          <h4 style="margin:0 0 0.5rem 0; color:var(--green); font-size:1.1rem;">${esc(r.title)}</h4>
+          <div class="note" style="line-height:1.5;">${bulletsList}</div>
+          <hr style="border:0; border-bottom:1px solid #f0f0f0; margin:1.2rem 0;">
+        </div>
       `;
     })
     .join("");
+
+  sideMenuContent.innerHTML = rulesHtml;
+}
+
+function homeView() {
+  updateNavState("home");
+
+  const widgetHtml = renderWidget();
 
   const faqHtml = (faq || [])
     .map(item => `
@@ -78,28 +150,41 @@ function homeView() {
       <p class="note"><strong>${esc(meta.jurisdiction || "CDMX")}</strong></p>
       <p class="note">${esc(meta.source_primary || "")}</p>
       ${meta.notes ? `<p class="note"><em>${esc(meta.notes)}</em></p>` : ""}
-      ${meta.disclaimer ? `<p class="note" style="margin-top:1rem; border-top:1px solid #ddd; padding-top:0.5rem; font-size:0.9em;">⚠️ ${esc(meta.disclaimer)}</p>` : ""}
     </div>
   ` : "";
 
   setHTML(`
-    <div class="card">
-      <h3>Reglas rápidas</h3>
-      <ul class="rules" style="list-style: none; padding-left: 0;">
-        ${rulesHtml || "<li>Cargando reglas...</li>"}
-      </ul>
-      <p class="note" style="margin-top:1rem; border-top:1px solid rgba(0,0,0,0.12); padding-top:0.6rem;">
-        💡 <strong>Tip:</strong> si dudas, busca por material (ej. “tubo”, “laminado”, “hidrocoloide”, “filtro”).
-      </p>
+    ${widgetHtml}
+
+    <div style="text-align:center; margin-bottom: 2rem;">
+       <button id="openRulesBtn" class="btn green" style="width:auto; display:inline-flex; padding: 0.8rem 2rem; border-radius: 50px;">
+          📜 Ver Consejos y Reglas
+       </button>
     </div>
 
-    <div class="card">
+    <div class="card spacer-block">
       <h3>Preguntas frecuentes</h3>
       ${faqHtml || "<p class='note'>—</p>"}
     </div>
 
     ${credits}
   `);
+
+  document.getElementById("openRulesBtn")?.addEventListener("click", () => toggleMenu(true));
+  observeCards(); // Re-trigger observer
+}
+
+// ---------- Intersection Observer ----------
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.1 });
+
+function observeCards() {
+  document.querySelectorAll('.card').forEach(c => cardObserver.observe(c));
 }
 
 // ---------- init ----------
@@ -107,7 +192,6 @@ async function initApp() {
   try {
     setHTML(`<p class="hint">Cargando base de datos…</p>`);
 
-    // Importante: sin cache:"no-store" para no pelearte con el SW
     const res = await fetch(DB_URL);
     if (!res.ok) throw new Error(`No se pudo cargar ${DB_URL} (HTTP ${res.status}).`);
 
@@ -116,7 +200,7 @@ async function initApp() {
       throw new Error("db.json no tiene el formato esperado: { categories: [...] }");
     }
 
-    meta = data.meta || null;
+    meta = data.metadata || data.meta || null;
     quickRules = Array.isArray(data.quick_rules) ? data.quick_rules : [];
     faq = Array.isArray(data.faq) ? data.faq : [];
 
@@ -133,6 +217,7 @@ async function initApp() {
       const items = Array.isArray(cat.items) ? cat.items : [];
       return items.map(item => ({
         name: item.name || "",
+        search_terms: Array.isArray(item.search_terms) ? item.search_terms : [],
         examples: Array.isArray(item.examples) ? item.examples : [],
         notes: item.notes || "",
         ...catMeta
@@ -153,9 +238,11 @@ async function initApp() {
 }
 
 // ---------- render ----------
-function createCard(item) {
+function createCard(item, index = 0) {
   const div = document.createElement("div");
   div.className = `card border-${item.categoryColor || "gris"}`;
+
+  div.style.animationDelay = `${index * 0.05}s`;
 
   const examplesText = item.examples?.length ? esc(item.examples.join(", ")) : "—";
   const notesText = item.notes ? esc(item.notes) : "";
@@ -180,13 +267,26 @@ function renderList(items) {
     return;
   }
   const frag = document.createDocumentFragment();
-  items.forEach(item => frag.appendChild(createCard(item)));
+  items.forEach((item, index) => frag.appendChild(createCard(item, index)));
   content.appendChild(frag);
+  observeCards();
 }
 
-// ---------- actions ----------
+// ---------- acts ----------
+function updateNavState(activeId) {
+  document.querySelectorAll("nav button").forEach(btn => {
+    const btnId = btn.dataset.cat;
+    if (activeId === btnId) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+}
+
 function filterByCategory(categoryId) {
   if (searchInput) searchInput.value = "";
+  updateNavState(categoryId);
 
   if (categoryId === "home") { homeView(); return; }
   if (categoryId === "all") { renderList(flatItems); return; }
@@ -208,14 +308,17 @@ function filterByCategory(categoryId) {
 }
 
 function searchItems(term) {
+  updateNavState(null);
   const q = normalize(term).trim();
-  if (q.length < 2) return;
+
+  if (q.length === 0) { homeView(); return; }
 
   const results = flatItems.filter(item => {
     const hayName = normalize(item.name).includes(q);
     const hayExamples = item.examples?.some(ex => normalize(ex).includes(q));
+    const hayTerms = item.search_terms?.some(t => normalize(t).includes(q));
     const hayNotes = normalize(item.notes).includes(q);
-    return hayName || hayExamples || hayNotes;
+    return hayName || hayExamples || hayNotes || hayTerms;
   });
 
   renderList(results);
@@ -238,5 +341,9 @@ if (searchInput) {
   });
 }
 
-// Nota: NO registramos SW aquí. Se registra en index.html (root).
+// Side Menu Listeners
+closeMenuBtn?.addEventListener("click", () => toggleMenu(false));
+sideMenuBackdrop?.addEventListener("click", () => toggleMenu(false));
+appTitle?.addEventListener("click", () => homeView());
+
 initApp();
