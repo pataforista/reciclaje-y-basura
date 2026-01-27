@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Basura CDMX",
+  "short_name": "Basura CDMX",
+  "description": "Guía rápida para separar residuos en CDMX con consulta offline.",
+  "lang": "es-MX",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f2",
+  "theme_color": "#1b5e20",
+  "orientation": "portrait-primary",
+  "categories": ["education", "utilities", "productivity"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "/screenshots/screen-1-1080x1920.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "Pantalla principal" },
+    { "src": "/screenshots/screen-2-1080x1920.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "Búsqueda de residuo" }
+  ]
+}
+

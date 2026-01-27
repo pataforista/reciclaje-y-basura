@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basura CDMX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1b5e20" />
+  <meta name="description" content="Guía doméstica para separar residuos en CDMX. Funciona offline." />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180.png" />
+
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>♻️ Basura CDMX</h1>
+  <p class="subtitle">Guía doméstica · Offline</p>
+</header>
+
+<nav>
+  <button data-cat="organicos" class="btn green">🟢 Orgánicos</button>
+  <button data-cat="reciclables" class="btn gray">🔘 Reciclables</button>
+  <button data-cat="no_reciclables" class="btn orange">🟠 No reciclables</button>
+</nav>
+
+<section class="search">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Buscar residuo (ej. té, perro, PET)"
+    aria-label="Buscar residuo"
+    autocomplete="off"
+  />
+</section>
+
+<main id="content">
+  <p class="hint">Selecciona una categoría o usa el buscador.</p>
+</main>
+
+<footer>
+  <small>CDMX · Uso doméstico · Funciona sin internet. CACB miniappsminisoluciones@gmail.com</small>
+</footer>
+
+<!-- App -->
+<script src="/app.js"></script>
+
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", async () => {
+      try {
+        await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+        console.log("SW registrado ✅");
+      } catch (e) {
+        console.warn("SW no pudo registrarse", e);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
