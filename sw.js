@@ -5,20 +5,20 @@ const CACHE_NAME = `basura-cdmx-${CACHE_VERSION}`;
 // Si alguno de estos archivos NO existe todavía, bórralo de la lista
 // o el SW puede fallar en install (cache.addAll exige que existan).
 const PRECACHE_URLS = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/app.js",
-  "/manifest.json",
-  "/db.json",
-  "/offline.html",
+  "./",
+  "./index.html",
+  "./style.css",
+  "./app.js",
+  "./manifest.json",
+  "./db.json",
+  "./offline.html",
 
   // Iconos (recomendado para auditoría + TWA)
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/icon-192-maskable.png",
-  "/icons/icon-512-maskable.png",
-  "/icons/apple-touch-icon-180.png"
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/icon-192-maskable.png",
+  "./icons/icon-512-maskable.png",
+  "./icons/apple-touch-icon-180.png"
 ];
 
 self.addEventListener("install", (event) => {
@@ -32,7 +32,7 @@ self.addEventListener("install", (event) => {
           try {
             const res = await fetch(url, { cache: "reload" });
             if (res && res.ok) await cache.put(url, res);
-          } catch {}
+          } catch { }
         })
       );
 
@@ -74,11 +74,11 @@ self.addEventListener("fetch", (event) => {
           const fresh = await fetch(req);
           const cache = await caches.open(CACHE_NAME);
           // Mantén index fresco por si cambias contenido
-          cache.put("/index.html", fresh.clone());
+          cache.put("./index.html", fresh.clone());
           return fresh;
         } catch {
           const cached = await caches.match(req);
-          return cached || (await caches.match("/offline.html")) || new Response(
+          return cached || (await caches.match("./offline.html")) || new Response(
             "Offline",
             { status: 200, headers: { "Content-Type": "text/plain; charset=utf-8" } }
           );
