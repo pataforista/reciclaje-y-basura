@@ -91,7 +91,7 @@ function renderWidget() {
 
   const message = todaysCats.length > 0
     ? `Toca: ${todaysCats.join(", ")}`
-    : "Hoy no hay recolección oficial.";
+    : "Hoy no hay recolección programada.";
 
   // Insert Widget at top of Content
   const widget = document.createElement("div");

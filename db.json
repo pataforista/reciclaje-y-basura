@@ -9,15 +9,33 @@
     "jurisdiction": "CDMX",
     "source_primary": "Basado en información pública de la CDMX (Programa Basura Cero)",
     "collection_days_reference": {
-      "reciclables": ["Lunes", "Miércoles", "Viernes", "Domingo"],
-      "no_reciclables": ["Lunes", "Miércoles", "Viernes", "Domingo"],
-      "organicos": ["Martes", "Jueves", "Sábado"],
-      "manejo_especial": ["Centros de Acopio", "Mercado de Trueque", "Reciclatrón"]
+      "reciclables": [
+        "Lunes",
+        "Miércoles",
+        "Viernes",
+        "Domingo"
+      ],
+      "no_reciclables": [
+        "Lunes",
+        "Miércoles",
+        "Viernes",
+        "Domingo"
+      ],
+      "organicos": [
+        "Martes",
+        "Jueves",
+        "Sábado"
+      ],
+      "manejo_especial": [
+        "Centros de Acopio",
+        "Mercado de Trueque",
+        "Reciclatrón"
+      ]
     },
-    "notes": "Sigue la clasificación oficial de la Ciudad de México.",
+    "notes": "Sigue la clasificación pública de la Ciudad de México.",
     "disclaimer": "Esta aplicación es independiente y no representa a ninguna entidad gubernamental."
   },
-  "quick_rules":[
+  "quick_rules": [
     {
       "id": "qr_entrega",
       "title": "Cómo entregar",
@@ -28,867 +46,885 @@
         "Cartón y papel: secos y doblados."
       ]
     },
-  {
-    "id": "qr_duda",
-    "title": "Si hay duda",
-    "bullets": [
-      "Si es material mixto (cartón+plástico pegado, multilaminado, metalizado) y no se separa fácilmente sin herramientas → No reciclable.",
-      "Si está muy sucio o grasoso (aceite, comida pegada) → No reciclable.",
-      "Si es sanitario (contacto con fluidos corporales, higiene personal, curación) → No reciclable.",
-      "Si es peligroso o especial (pilas, medicamentos, jeringas, electrónicos) → Manejo especial."
-    ]
-  },
-  {
-    "id": "qr_seguridad",
-    "title": "Seguridad (personal de limpia)",
-    "bullets": [
-      "Residuos sanitarios (curitas, gasas, pañales, toallas sanitarias): bolsa cerrada. Si hay sangre visible: doble bolsa y rotular 'SANITARIO'.",
-      "Vidrio o cerámica rota: nunca suelto. Envolver en cartón grueso, encintar y rotular 'VIDRIO ROTO'.",
-      "Punzocortantes (agujas, jeringas): en envase rígido, cerrado y rotulado."
-    ]
-  },
-  {
-    "id": "qr_materiales_eng",
-    "title": "Materiales engañosos (rápido)",
-    "bullets": [
-      "Plástico muy delgado que envuelve (termoencogible, multipack) → No reciclable.",
-      "Envoltura con interior plateado o brillante → No reciclable.",
-      "Cartón encerado, vasos de café, polipapel → No reciclable.",
-      "Bolsas del súper y de verduras: solo limpias y secas → Reciclables."
-    ]
-  },
-  {
-    "id": "qr_mascotas",
-    "title": "Mascotas (Criterio oficial)",
-    "bullets": [
-      "Heces: según contexto → inodoro o contenedor de orgánicos solo si se usan bolsas compostables certificadas.",
-      "En vía pública: recoger con bolsa compostable certificada y depositar en orgánicos, o usar coladeras de tapa redonda cuando esté indicado.",
-      "Arena de gato: convencional → No reciclable; orgánica → Orgánicos; hidrosoluble → inodoro."
-    ]
-  }
-],
-"faq": [
-  {
-    "q": "¿Por qué separar los residuos?",
-    "a": "Permite aprovechar residuos, reducir la contaminación y mantener una ciudad más limpia y saludable. Es una responsabilidad ciudadana."
-  },
-  {
-    "q": "¿Cómo se evita que se mezclen en el camión?",
-    "a": "Los residuos se recolectan por separado y en días específicos. El personal de limpia está capacitado y puede rechazar residuos mezclados."
-  },
-  {
-    "q": "¿A dónde van después de la recolección?",
-    "a": "Reciclables: plantas de selección y reciclaje. No reciclables: coprocesamiento o disposición final. Orgánicos: composta o carbón vegetal."
-  },
-  {
-    "q": "¿Dónde va el polvo que barremos?",
-    "a": "No reciclables. El polvo doméstico contiene fibras, tierra, pelo y microplásticos."
-  },
-  {
-    "q": "¿Pelusa o filtro de secadora?",
-    "a": "No reciclables. Es una mezcla de microfibras textiles y polvo."
-  },
-  {
-    "q": "¿Filtros de aspiradora, aire acondicionado o purificador?",
-    "a": "No reciclables. Son materiales mixtos (fibras, plástico y polvo)."
-  },
-  {
-    "q": "¿Tubo de pasta dental o crema en tubo?",
-    "a": "No reciclables. Generalmente son laminados de plástico y aluminio."
-  },
-  {
-    "q": "¿Bote rígido de crema o shampoo?",
-    "a": "Reciclables si están limpios y secos, preferentemente con triángulo 2 (HDPE) o 5 (PP)."
-  },
-  {
-    "q": "¿Parches hidrocoloides, curitas o gasas?",
-    "a": "No reciclables. Se consideran residuos sanitarios."
-  },
-  {
-    "q": "¿Relleno de peluches o espuma?",
-    "a": "No reciclables."
-  },
-  {
-    "q": "¿Restos de jabón en polvo mezclado con polvo?",
-    "a": "No reciclables. Embolsar para evitar dispersión."
-  },
-  {
-    "q": "¿Latas de frijoles y sus etiquetas?",
-    "a": "Reciclables. Enjuagar bien. La etiqueta puede quedarse; retirarla solo si se despega fácilmente."
-  },
-   {
-    "q": "¿Papel encerado y papel plastificado (polipapel)?",
-    "a": "No reciclables. Son papeles con recubrimiento o laminado."
-  }
-],
-"categories": [
-  {
-    "id": "organicos",
-    "label": "Orgánicos",
-    "color": "verde",
-    "collection_days": ["Martes", "Jueves", "Sábado"],
-    "items": [
     {
-      "name": "Restos de verduras, hortalizas y frutas",
-      "search_terms": [
-        "cáscaras",
-        "cascaras",
-        "fruta",
-        "verdura",
-        "restos de fruta",
-        "restos de verdura",
-        "sobras vegetales",
-        "orgánico",
-        "organico"
-      ],
-      "examples": [
-        "cáscara de plátano",
-        "piel de naranja",
-        "cáscara de papa",
-        "cáscara de pepino",
-        "restos de papaya",
-        "cáscaras de mango",
-        "cáscaras de cítricos",
-        "hojas y tallos de verduras"
-      ],
-      "notes": "Pueden ir frescos, secos o echados a perder."
+      "id": "qr_duda",
+      "title": "Si hay duda",
+      "bullets": [
+        "Si es material mixto (cartón+plástico pegado, multilaminado, metalizado) y no se separa fácilmente sin herramientas → No reciclable.",
+        "Si está muy sucio o grasoso (aceite, comida pegada) → No reciclable.",
+        "Si es sanitario (contacto con fluidos corporales, higiene personal, curación) → No reciclable.",
+        "Si es peligroso o especial (pilas, medicamentos, jeringas, electrónicos) → Manejo especial."
+      ]
     },
     {
-      "name": "Restos duros de fruta (huesos y semillas grandes)",
-      "search_terms": [
-        "hueso",
-        "semilla",
-        "hueso de fruta",
-        "semillas grandes",
-        "aguacate",
-        "mamey",
-        "durazno"
-      ],
-      "examples": [
-        "hueso de aguacate",
-        "hueso de mamey",
-        "hueso de durazno",
-        "semillas de papaya",
-        "corazón de manzana"
-      ],
-      "notes": "Orgánico aunque sea duro."
+      "id": "qr_seguridad",
+      "title": "Seguridad (personal de limpia)",
+      "bullets": [
+        "Residuos sanitarios (curitas, gasas, pañales, toallas sanitarias): bolsa cerrada. Si hay sangre visible: doble bolsa y rotular 'SANITARIO'.",
+        "Vidrio o cerámica rota: nunca suelto. Envolver en cartón grueso, encintar y rotular 'VIDRIO ROTO'.",
+        "Punzocortantes (agujas, jeringas): en envase rígido, cerrado y rotulado."
+      ]
     },
     {
-      "name": "Sobras de comida (de origen animal o vegetal)",
-      "search_terms": [
-        "sobras",
-        "comida",
-        "restos de comida",
-        "guisado",
-        "arroz",
-        "frijoles",
-        "pasta",
-        "carne",
-        "pollo",
-        "pescado",
-        "huesos",
-        "espinas",
-        "huevo"
-      ],
-      "examples": [
-        "arroz",
-        "pasta",
-        "frijoles",
-        "guisados",
-        "carne cocida",
-        "huesos",
-        "espinas de pescado",
-        "cáscara de huevo"
-      ],
-      "notes": "Entregar sin exceso de líquidos. Si hay mucho caldillo, escurrir."
+      "id": "qr_materiales_eng",
+      "title": "Materiales engañosos (rápido)",
+      "bullets": [
+        "Plástico muy delgado que envuelve (termoencogible, multipack) → No reciclable.",
+        "Envoltura con interior plateado o brillante → No reciclable.",
+        "Cartón encerado, vasos de café, polipapel → No reciclable.",
+        "Bolsas del súper y de verduras: solo limpias y secas → Reciclables."
+      ]
     },
     {
-      "name": "Jardinería y poda",
-      "search_terms": [
-        "flores",
-        "pasto",
-        "ramas",
-        "hojas",
-        "hojarasca",
-        "poda",
-        "jardín",
-        "jardinería"
-      ],
-      "examples": [
-        "flores",
-        "pasto",
-        "ramas",
-        "hojarasca",
-        "poda de plantas"
-      ],
-      "notes": "Sin macetas, alambres o listones. Tierra suelta en pequeñas cantidades es aceptada."
+      "id": "qr_mascotas",
+      "title": "Mascotas (Criterio público)",
+      "bullets": [
+        "Heces: según contexto → inodoro o contenedor de orgánicos solo si se usan bolsas compostables certificadas.",
+        "En vía pública: recoger con bolsa compostable certificada y depositar en orgánicos, o usar coladeras de tapa redonda cuando esté indicado.",
+        "Arena de gato: convencional → No reciclable; orgánica → Orgánicos; hidrosoluble → inodoro."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué separar los residuos?",
+      "a": "Permite aprovechar residuos, reducir la contaminación y mantener una ciudad más limpia y saludable. Es una responsabilidad ciudadana."
     },
     {
-      "name": "Café (orgánico) y filtros de café de papel",
-      "search_terms": [
-        "café",
-        "posos de café",
-        "bagazo",
-        "filtro de café",
-        "café usado",
-        "café molido"
-      ],
-      "examples": [
-        "posos de café",
-        "bagazo de café",
-        "filtro de papel usado",
-        "café molido usado"
-      ],
-      "notes": "Si usas cápsulas, revisa el programa de acopio de la marca o clasifica según material/aceptación local."
+      "q": "¿Cómo se evita que se mezclen en el camión?",
+      "a": "Los residuos se recolectan por separado y en días específicos. El personal de limpia está capacitado y puede rechazar residuos mezclados."
     },
     {
-      "name": "Té e infusiones (solo el contenido)",
-      "search_terms": [
-        "té",
-        "te",
-        "infusión",
-        "hierbas",
-        "manzanilla",
-        "mate",
-        "bolsa de té"
-      ],
-      "examples": [
-        "hojas de té",
-        "hierbas de infusión",
-        "flores de manzanilla",
-        "mate usado"
-      ],
-      "notes": "Vaciar el contenido a orgánicos. Bolsita, hilo, etiqueta y grapa: usualmente No reciclable."
+      "q": "¿A dónde van después de la recolección?",
+      "a": "Reciclables: plantas de selección y reciclaje. No reciclables: coprocesamiento o disposición final. Orgánicos: composta o carbón vegetal."
     },
     {
-      "name": "Servilletas usadas (con restos de alimentos)",
-      "search_terms": [
-        "servilleta",
-        "servilletas",
-        "papel absorbente",
-        "papel con comida",
-        "papel sucio"
-      ],
-      "examples": [
-        "servilleta usada al comer",
-        "papel absorbente con grasa de comida"
-      ],
-      "notes": "Si están impregnadas con químicos de limpieza o desinfectantes: No reciclable."
+      "q": "¿Dónde va el polvo que barremos?",
+      "a": "No reciclables. El polvo doméstico contiene fibras, tierra, pelo y microplásticos."
     },
     {
-      "name": "Pan, tortillas y cereales",
-      "search_terms": [
-        "pan",
-        "pan duro",
-        "tortillas",
-        "tortillas viejas",
-        "galletas",
-        "cereal",
-        "harina"
-      ],
-      "examples": [
-        "pan duro",
-        "tortillas viejas",
-        "galletas rancias",
-        "cereal sin empaque"
-      ],
-      "notes": "Sin bolsas plásticas ni envolturas."
+      "q": "¿Pelusa o filtro de secadora?",
+      "a": "No reciclables. Es una mezcla de microfibras textiles y polvo."
     },
     {
-      "name": "Madera natural pequeña y corcho natural",
-      "search_terms": [
-        "palillos",
-        "palitos",
-        "madera",
-        "corcho",
-        "corcho natural"
-      ],
-      "examples": [
-        "palillos de dientes",
-        "palitos de madera sin tratar",
-        "corchos de vino naturales"
-      ],
-      "notes": "Solo madera natural sin pintura ni barniz. Corcho debe desmoronarse (no sintético)."
+      "q": "¿Filtros de aspiradora, aire acondicionado o purificador?",
+      "a": "No reciclables. Son materiales mixtos (fibras, plástico y polvo)."
     },
     {
-      "name": "Heces de mascotas (Depende del contexto)",
-      "search_terms": [
-        "heces",
-        "popó",
-        "popo",
-        "caca",
-        "excremento",
-        "heces de perro",
-        "heces de gato",
-        "baño de mascota"
-      ],
-      "examples": [
-        "heces de perro",
-        "heces de gato (sin arena)",
-        "bolsa compostable certificada"
-      ],
-      "notes": "Opciones: En casa: inodoro o contenedor de orgánicos. En espacios públicos: recoger con bolsas compostables certificadas y depositar en orgánicos; o recoger con papel/recogedor tipo pinza y depositar en coladeras de tapa redonda, y desechar el papel higiénico de forma adecuada."
+      "q": "¿Tubo de pasta dental o crema en tubo?",
+      "a": "No reciclables. Generalmente son laminados de plástico y aluminio."
     },
     {
-      "name": "Arena de gato orgánica/vegetal",
-      "search_terms": [
-        "arena de gato",
-        "arena orgánica",
-        "arena biodegradable",
-        "arena vegetal"
+      "q": "¿Bote rígido de crema o shampoo?",
+      "a": "Reciclables si están limpios y secos, preferentemente con triángulo 2 (HDPE) o 5 (PP)."
+    },
+    {
+      "q": "¿Parches hidrocoloides, curitas o gasas?",
+      "a": "No reciclables. Se consideran residuos sanitarios."
+    },
+    {
+      "q": "¿Relleno de peluches o espuma?",
+      "a": "No reciclables."
+    },
+    {
+      "q": "¿Restos de jabón en polvo mezclado con polvo?",
+      "a": "No reciclables. Embolsar para evitar dispersión."
+    },
+    {
+      "q": "¿Latas de frijoles y sus etiquetas?",
+      "a": "Reciclables. Enjuagar bien. La etiqueta puede quedarse; retirarla solo si se despega fácilmente."
+    },
+    {
+      "q": "¿Papel encerado y papel plastificado (polipapel)?",
+      "a": "No reciclables. Son papeles con recubrimiento o laminado."
+    }
+  ],
+  "categories": [
+    {
+      "id": "organicos",
+      "label": "Orgánicos",
+      "color": "verde",
+      "collection_days": [
+        "Martes",
+        "Jueves",
+        "Sábado"
       ],
-      "examples": [
-        "arena orgánica de fibras vegetales",
-        "arena biodegradable vegetal"
+      "items": [
+        {
+          "name": "Restos de verduras, hortalizas y frutas",
+          "search_terms": [
+            "cáscaras",
+            "cascaras",
+            "fruta",
+            "verdura",
+            "restos de fruta",
+            "restos de verdura",
+            "sobras vegetales",
+            "orgánico",
+            "organico"
+          ],
+          "examples": [
+            "cáscara de plátano",
+            "piel de naranja",
+            "cáscara de papa",
+            "cáscara de pepino",
+            "restos de papaya",
+            "cáscaras de mango",
+            "cáscaras de cítricos",
+            "hojas y tallos de verduras"
+          ],
+          "notes": "Pueden ir frescos, secos o echados a perder."
+        },
+        {
+          "name": "Restos duros de fruta (huesos y semillas grandes)",
+          "search_terms": [
+            "hueso",
+            "semilla",
+            "hueso de fruta",
+            "semillas grandes",
+            "aguacate",
+            "mamey",
+            "durazno"
+          ],
+          "examples": [
+            "hueso de aguacate",
+            "hueso de mamey",
+            "hueso de durazno",
+            "semillas de papaya",
+            "corazón de manzana"
+          ],
+          "notes": "Orgánico aunque sea duro."
+        },
+        {
+          "name": "Sobras de comida (de origen animal o vegetal)",
+          "search_terms": [
+            "sobras",
+            "comida",
+            "restos de comida",
+            "guisado",
+            "arroz",
+            "frijoles",
+            "pasta",
+            "carne",
+            "pollo",
+            "pescado",
+            "huesos",
+            "espinas",
+            "huevo"
+          ],
+          "examples": [
+            "arroz",
+            "pasta",
+            "frijoles",
+            "guisados",
+            "carne cocida",
+            "huesos",
+            "espinas de pescado",
+            "cáscara de huevo"
+          ],
+          "notes": "Entregar sin exceso de líquidos. Si hay mucho caldillo, escurrir."
+        },
+        {
+          "name": "Jardinería y poda",
+          "search_terms": [
+            "flores",
+            "pasto",
+            "ramas",
+            "hojas",
+            "hojarasca",
+            "poda",
+            "jardín",
+            "jardinería"
+          ],
+          "examples": [
+            "flores",
+            "pasto",
+            "ramas",
+            "hojarasca",
+            "poda de plantas"
+          ],
+          "notes": "Sin macetas, alambres o listones. Tierra suelta en pequeñas cantidades es aceptada."
+        },
+        {
+          "name": "Café (orgánico) y filtros de café de papel",
+          "search_terms": [
+            "café",
+            "posos de café",
+            "bagazo",
+            "filtro de café",
+            "café usado",
+            "café molido"
+          ],
+          "examples": [
+            "posos de café",
+            "bagazo de café",
+            "filtro de papel usado",
+            "café molido usado"
+          ],
+          "notes": "Si usas cápsulas, revisa el programa de acopio de la marca o clasifica según material/aceptación local."
+        },
+        {
+          "name": "Té e infusiones (solo el contenido)",
+          "search_terms": [
+            "té",
+            "te",
+            "infusión",
+            "hierbas",
+            "manzanilla",
+            "mate",
+            "bolsa de té"
+          ],
+          "examples": [
+            "hojas de té",
+            "hierbas de infusión",
+            "flores de manzanilla",
+            "mate usado"
+          ],
+          "notes": "Vaciar el contenido a orgánicos. Bolsita, hilo, etiqueta y grapa: usualmente No reciclable."
+        },
+        {
+          "name": "Servilletas usadas (con restos de alimentos)",
+          "search_terms": [
+            "servilleta",
+            "servilletas",
+            "papel absorbente",
+            "papel con comida",
+            "papel sucio"
+          ],
+          "examples": [
+            "servilleta usada al comer",
+            "papel absorbente con grasa de comida"
+          ],
+          "notes": "Si están impregnadas con químicos de limpieza o desinfectantes: No reciclable."
+        },
+        {
+          "name": "Pan, tortillas y cereales",
+          "search_terms": [
+            "pan",
+            "pan duro",
+            "tortillas",
+            "tortillas viejas",
+            "galletas",
+            "cereal",
+            "harina"
+          ],
+          "examples": [
+            "pan duro",
+            "tortillas viejas",
+            "galletas rancias",
+            "cereal sin empaque"
+          ],
+          "notes": "Sin bolsas plásticas ni envolturas."
+        },
+        {
+          "name": "Madera natural pequeña y corcho natural",
+          "search_terms": [
+            "palillos",
+            "palitos",
+            "madera",
+            "corcho",
+            "corcho natural"
+          ],
+          "examples": [
+            "palillos de dientes",
+            "palitos de madera sin tratar",
+            "corchos de vino naturales"
+          ],
+          "notes": "Solo madera natural sin pintura ni barniz. Corcho debe desmoronarse (no sintético)."
+        },
+        {
+          "name": "Heces de mascotas (Depende del contexto)",
+          "search_terms": [
+            "heces",
+            "popó",
+            "popo",
+            "caca",
+            "excremento",
+            "heces de perro",
+            "heces de gato",
+            "baño de mascota"
+          ],
+          "examples": [
+            "heces de perro",
+            "heces de gato (sin arena)",
+            "bolsa compostable certificada"
+          ],
+          "notes": "Opciones: En casa: inodoro o contenedor de orgánicos. En espacios públicos: recoger con bolsas compostables certificadas y depositar en orgánicos; o recoger con papel/recogedor tipo pinza y depositar en coladeras de tapa redonda, y desechar el papel higiénico de forma adecuada."
+        },
+        {
+          "name": "Arena de gato orgánica/vegetal",
+          "search_terms": [
+            "arena de gato",
+            "arena orgánica",
+            "arena biodegradable",
+            "arena vegetal"
+          ],
+          "examples": [
+            "arena orgánica de fibras vegetales",
+            "arena biodegradable vegetal"
+          ],
+          "notes": "Solo si el producto es orgánico (no mineral). Si es convencional/mineral: No reciclable. Si es hidrosoluble: inodoro."
+        }
+      ]
+    },
+    {
+      "id": "reciclables",
+      "label": "Reciclables",
+      "color": "gris",
+      "collection_days": [
+        "Lunes",
+        "Miércoles",
+        "Viernes",
+        "Domingo"
       ],
-      "notes": "Solo si el producto es orgánico (no mineral). Si es convencional/mineral: No reciclable. Si es hidrosoluble: inodoro."
+      "items": [
+        {
+          "name": "Papel (limpio y seco)",
+          "search_terms": [
+            "papel",
+            "hojas",
+            "hojas bond",
+            "papel oficina",
+            "periódico",
+            "revistas",
+            "sobres",
+            "papel blanco"
+          ],
+          "examples": [
+            "hojas bond",
+            "periódico",
+            "revistas",
+            "sobres de papel (sin burbuja)",
+            "papel de oficina"
+          ],
+          "notes": "Debe estar seco y limpio. Si está muy sucio, con grasa o restos de comida: No reciclable."
+        },
+        {
+          "name": "Cartón (limpio y seco)",
+          "search_terms": [
+            "cartón",
+            "caja",
+            "caja de cartón",
+            "carton corrugado",
+            "caja de envio",
+            "cartón de huevo",
+            "tubos de cartón"
+          ],
+          "examples": [
+            "cajas de cereal",
+            "cajas de envío",
+            "cartón corrugado",
+            "cartón de huevo",
+            "tubos de rollo (sin exceso de suciedad)"
+          ],
+          "notes": "Aplastar. Quitar bolsas, burbujas y rellenos. Cinta adhesiva: retirar si es posible. Si está grasoso (ej. caja de pizza): No reciclable."
+        },
+        {
+          "name": "Corcholatas y tapas metálicas",
+          "search_terms": [
+            "corcholata",
+            "tapa metálica",
+            "tapa de cerveza",
+            "tapa de refresco",
+            "chapas"
+          ],
+          "examples": [
+            "corcholata de cerveza",
+            "corcholata de refresco",
+            "tapa metálica de frasco"
+          ],
+          "notes": "Limpias y secas. Para que no se pierdan, agruparlas dentro de una lata o frasco."
+        },
+        {
+          "name": "Aerosoles vacíos (metal)",
+          "search_terms": [
+            "aerosol",
+            "spray",
+            "desodorante aerosol",
+            "laca",
+            "insecticida"
+          ],
+          "examples": [
+            "desodorante en aerosol vacío",
+            "spray para cabello vacío",
+            "insecticida en aerosol vacío"
+          ],
+          "notes": "Solo si está totalmente vacío. Si tiene contenido, es manejo especial según acopio local."
+        },
+        {
+          "name": "Plástico PET (botellas)",
+          "search_terms": [
+            "pet",
+            "botella pet",
+            "botella de plástico",
+            "botella de agua",
+            "botella de refresco"
+          ],
+          "examples": [
+            "botella de agua",
+            "botella de refresco",
+            "botella de té embotellado"
+          ],
+          "notes": "Vacías, limpias, secas y aplastadas. Tapas: pueden dejarse puestas o separadas según tu servicio."
+        },
+        {
+          "name": "Plástico rígido (HDPE / PP)",
+          "search_terms": [
+            "plástico rígido",
+            "hdpe",
+            "pp",
+            "envase shampoo",
+            "envase detergente",
+            "bote plástico",
+            "tupper"
+          ],
+          "examples": [
+            "envase de shampoo",
+            "envase de detergente",
+            "botella de suavizante",
+            "bote de yogurt grande",
+            "cubeta de helado",
+            "tupper rígido"
+          ],
+          "notes": "Lavar y secar. Preferible con triángulo ♻️ 2 o 5. Si es tubo mixto (plástico+aluminio), no es reciclable."
+        },
+        {
+          "name": "Bolsas de plástico del súper y de verduras (limpias)",
+          "search_terms": [
+            "bolsa de plástico",
+            "bolsa del super",
+            "bolsa camiseta",
+            "bolsa de verduras",
+            "bolsa transparente"
+          ],
+          "examples": [
+            "bolsa de supermercado limpia",
+            "bolsa de pan limpia",
+            "bolsa de verduras o fruta limpia",
+            "bolsa tipo camiseta"
+          ],
+          "notes": "Solo limpias y secas. Si están muy sucias o grasosas: No reciclable. Si hay punto de acopio, es preferible llevarlas ahí."
+        },
+        {
+          "name": "Vidrio (botellas y frascos)",
+          "search_terms": [
+            "vidrio",
+            "botella de vidrio",
+            "frasco",
+            "envase de vidrio"
+          ],
+          "examples": [
+            "botellas",
+            "frascos",
+            "envases de vidrio de alimentos"
+          ],
+          "notes": "Vacíos y enjuagados. Sin tapa. Vasos, cristalería, cerámica, espejos y ventanas: No reciclables (manejo especial)."
+        },
+        {
+          "name": "Metales (latas)",
+          "search_terms": [
+            "lata",
+            "lata de aluminio",
+            "lata de conserva",
+            "lata de frijoles",
+            "lata de atún",
+            "metal"
+          ],
+          "examples": [
+            "lata de aluminio",
+            "lata de conserva",
+            "lata de frijoles",
+            "lata de atún",
+            "lata de verduras"
+          ],
+          "notes": "Enjuagar para evitar olores. Aplastar si se puede. Etiquetas: si se desprenden fácil, retirar; si no, no pasa nada mientras esté limpio."
+        },
+        {
+          "name": "Envases multicapa (Tetra Pak)",
+          "search_terms": [
+            "tetrapak",
+            "tetra pak",
+            "caja de leche",
+            "caja de jugo",
+            "envase multicapa"
+          ],
+          "examples": [
+            "caja de leche",
+            "caja de jugo",
+            "puré de tomate en caja",
+            "leche vegetal en caja"
+          ],
+          "notes": "Enjuagar, escurrir y aplastar. Si queda con líquidos o residuos pegados, pasa a No reciclable."
+        }
+      ]
+    },
+    {
+      "id": "no_reciclables",
+      "label": "No Reciclables",
+      "color": "naranja",
+      "collection_days": [
+        "Lunes",
+        "Miércoles",
+        "Viernes",
+        "Domingo"
+      ],
+      "items": [
+        {
+          "name": "Residuos sanitarios",
+          "search_terms": [
+            "sanitario",
+            "pañales",
+            "toallas sanitarias",
+            "tampones",
+            "preservativos",
+            "condones",
+            "curitas",
+            "algodón",
+            "hisopos",
+            "cotonetes",
+            "pañuelos",
+            "papel de baño",
+            "sangre"
+          ],
+          "examples": [
+            "pañales",
+            "toallas sanitarias",
+            "tampones",
+            "preservativos",
+            "curitas",
+            "algodón",
+            "hisopos/cotonetes",
+            "pañuelos usados",
+            "papel de baño"
+          ],
+          "notes": "Basura sanitaria. Entregar en bolsa cerrada. Si hay sangre visible: doble bolsa y rotular 'SANITARIO'."
+        },
+        {
+          "name": "Toallitas húmedas y textiles de limpieza desechables",
+          "search_terms": [
+            "toallitas",
+            "toallitas húmedas",
+            "toallitas desinfectantes",
+            "paños desechables",
+            "servitoallas",
+            "trapos desechables"
+          ],
+          "examples": [
+            "toallitas húmedas (bebé/mascota)",
+            "toallitas desinfectantes",
+            "paños desechables",
+            "servitoallas con químicos"
+          ],
+          "notes": "Si solo tienen restos de comida: podrían ser orgánicos; si tienen químicos, baño o mascota: no reciclables."
+        },
+        {
+          "name": "Etiquetas adhesivas sueltas y stickers",
+          "search_terms": [
+            "etiqueta",
+            "sticker",
+            "calcomanía",
+            "precio",
+            "adhesivo",
+            "label"
+          ],
+          "examples": [
+            "etiquetas autoadheribles",
+            "sticker de precio",
+            "calcomanías",
+            "etiquetas plásticas pegajosas"
+          ],
+          "notes": "Material mixto con adhesivos: no reciclable."
+        },
+        {
+          "name": "Espumas y rellenos de embalaje (no unicel)",
+          "search_terms": [
+            "espuma",
+            "foam",
+            "relleno de embalaje",
+            "empaque",
+            "esponja de empaque"
+          ],
+          "examples": [
+            "foam de protección",
+            "esponja de empaque",
+            "relleno sintético de embalaje",
+            "espuma flexible"
+          ],
+          "notes": "No reciclables en recolección domiciliaria."
+        },
+        {
+          "name": "Empaques metalizados y multilaminados",
+          "search_terms": [
+            "metalizado",
+            "bolsa brillante",
+            "envoltura",
+            "papitas",
+            "galletas",
+            "chocolate",
+            "multipack",
+            "bolsa de croquetas"
+          ],
+          "examples": [
+            "bolsa de papitas",
+            "envoltura de galletas",
+            "envoltura de chocolate",
+            "bolsa de palomitas (interior brillante)",
+            "empaques de dulces múltiples",
+            "bolsas de croquetas/premios"
+          ],
+          "notes": "Material mixto o metalizado: no reciclable en camión."
+        },
+        {
+          "name": "Plástico termoencogible / envoltura transparente ajustada",
+          "search_terms": [
+            "termoencogible",
+            "plástico delgado",
+            "envoltura transparente",
+            "wrap",
+            "plástico de videojuegos",
+            "shrink wrap"
+          ],
+          "examples": [
+            "plástico que recubre cajas de videojuegos",
+            "plástico que envuelve paquetes múltiples",
+            "envoltura transparente muy delgada"
+          ],
+          "notes": "Difícil de recuperar en recolección domiciliaria. Si es muy delgado o va pegado, es no reciclable."
+        },
+        {
+          "name": "Empaques combinados cartón + plástico pegado",
+          "search_terms": [
+            "cartón plastificado",
+            "polipapel",
+            "vaso de café",
+            "ventana plástica",
+            "blister",
+            "empaque mixto"
+          ],
+          "examples": [
+            "vasos de café de cartón encerado",
+            "caja con ventana plástica pegada",
+            "charolas de cartón plastificado",
+            "blister de cartón con plástico"
+          ],
+          "notes": "Si no se separa fácil en partes limpias, va a no reciclable."
+        },
+        {
+          "name": "Unicel (poliestireno expandido)",
+          "search_terms": [
+            "unicel",
+            "poliestireno",
+            "vasos de unicel",
+            "charola de carne",
+            "plato de unicel"
+          ],
+          "examples": [
+            "vasos de unicel",
+            "platos de unicel",
+            "protecciones de envío",
+            "charolas de carne"
+          ],
+          "notes": "Romper para reducir volumen. Generalmente no reciclable en camión. Existen centros privados especializados."
+        },
+        {
+          "name": "Cajas de pizza (grasosas o con comida)",
+          "search_terms": [
+            "pizza",
+            "caja de pizza",
+            "cartón con grasa",
+            "cartón sucio"
+          ],
+          "examples": [
+            "caja con grasa de queso",
+            "cartón manchado de aceite"
+          ],
+          "notes": "La parte limpia puede ir a reciclables; lo grasoso va aquí."
+        },
+        {
+          "name": "Tubos y envases mixtos",
+          "search_terms": [
+            "tubo",
+            "pasta dental",
+            "crema",
+            "pomada",
+            "envase aluminio plástico"
+          ],
+          "examples": [
+            "tubo de pasta dental",
+            "tubo de crema",
+            "tubos de pomadas"
+          ],
+          "notes": "Material mixto: no reciclable. Frascos rígidos de plástico (2 o 5) sí pueden reciclarse si están limpios."
+        },
+        {
+          "name": "Polvo, barrido y filtros",
+          "search_terms": [
+            "polvo",
+            "barrido",
+            "pelusa",
+            "lint",
+            "aspiradora",
+            "filtro",
+            "aire acondicionado"
+          ],
+          "examples": [
+            "polvo de barrer",
+            "pelusa de secadora",
+            "residuos de aspiradora",
+            "filtros domésticos"
+          ],
+          "notes": "Mezcla de fibras y suciedad: no reciclable. Embolsar para evitar dispersión."
+        },
+        {
+          "name": "Parches y adhesivos de curación",
+          "search_terms": [
+            "parches",
+            "parche hidrocoloide",
+            "apósitos",
+            "curación",
+            "cinta médica"
+          ],
+          "examples": [
+            "parches hidrocoloides",
+            "apósitos adhesivos",
+            "parches para acné",
+            "cintas médicas usadas"
+          ],
+          "notes": "Por uso sanitario y adhesivos: no reciclable."
+        },
+        {
+          "name": "Rellenos y espumas domésticas",
+          "search_terms": [
+            "relleno",
+            "peluche",
+            "espuma",
+            "almohada",
+            "esponja"
+          ],
+          "examples": [
+            "relleno de peluches",
+            "espuma de almohada",
+            "relleno sintético",
+            "esponja vieja de trastes"
+          ],
+          "notes": "No reciclable."
+        },
+        {
+          "name": "Vidrio roto / cerámica / espejo / ventana",
+          "search_terms": [
+            "vidrio roto",
+            "vaso roto",
+            "taza rota",
+            "cerámica",
+            "espejo",
+            "ventana"
+          ],
+          "examples": [
+            "vaso roto",
+            "taza rota",
+            "plato de cerámica",
+            "espejo",
+            "vidrio de ventana"
+          ],
+          "notes": "⚠️ PELIGRO: No tirar suelto. Envolver en cartón grueso, encintar y rotular 'VIDRIO ROTO'."
+        }
+      ]
+    },
+    {
+      "id": "manejo_especial",
+      "label": "Manejo Especial",
+      "color": "azul",
+      "collection_days": [
+        "Acopios",
+        "Jornadas",
+        "Programas especiales"
+      ],
+      "items": [
+        {
+          "name": "Aceite de cocina usado",
+          "search_terms": [
+            "aceite",
+            "aceite usado",
+            "aceite de freír",
+            "grasa"
+          ],
+          "examples": [
+            "aceite de freír",
+            "aceite vegetal usado",
+            "aceite escurrido de latas"
+          ],
+          "notes": "Dejar enfriar, filtrar, guardar en botella cerrada y etiquetar. Llevar a puntos de acopio o Mercado de Trueque."
+        },
+        {
+          "name": "Pilas y baterías",
+          "search_terms": [
+            "pilas",
+            "baterías",
+            "AA",
+            "AAA",
+            "botón",
+            "batería celular"
+          ],
+          "examples": [
+            "pilas AA/AAA",
+            "baterías de botón",
+            "batería de celular",
+            "powerbank dañado"
+          ],
+          "notes": "No tirarlas a la basura. Guardar en envase y llevar a acopio."
+        },
+        {
+          "name": "Medicamentos caducos",
+          "search_terms": [
+            "medicamentos",
+            "pastillas",
+            "jarabes",
+            "caducos",
+            "medicina"
+          ],
+          "examples": [
+            "pastillas vencidas",
+            "jarabes vencidos",
+            "sobres de medicamento"
+          ],
+          "notes": "Llevar a contenedores autorizados SINGREM en farmacias y centros participantes."
+        },
+        {
+          "name": "Jeringas y punzocortantes",
+          "search_terms": [
+            "jeringa",
+            "aguja",
+            "punzocortante",
+            "lanceta"
+          ],
+          "examples": [
+            "jeringas",
+            "agujas",
+            "lancetas"
+          ],
+          "notes": "Colocar en envase rígido a prueba de pinchazos, rotular y entregar en centros autorizados."
+        },
+        {
+          "name": "Electrónicos y cables",
+          "search_terms": [
+            "electrónicos",
+            "cables",
+            "USB",
+            "cargador",
+            "celular",
+            "audífonos"
+          ],
+          "examples": [
+            "cables USB",
+            "cargadores",
+            "audífonos",
+            "celulares",
+            "teclados",
+            "controles"
+          ],
+          "notes": "Llevar a jornadas o programas de acopio (p. ej., Reciclatrón)."
+        }
+      ]
     }
   ]
-},
-  {
-  "id": "reciclables",
-  "label": "Reciclables",
-  "color": "gris",
-  "collection_days": ["Lunes", "Miércoles", "Viernes", "Domingo"],
-  "items": [
-    {
-      "name": "Papel (limpio y seco)",
-      "search_terms": [
-        "papel",
-        "hojas",
-        "hojas bond",
-        "papel oficina",
-        "periódico",
-        "revistas",
-        "sobres",
-        "papel blanco"
-      ],
-      "examples": [
-        "hojas bond",
-        "periódico",
-        "revistas",
-        "sobres de papel (sin burbuja)",
-        "papel de oficina"
-      ],
-      "notes": "Debe estar seco y limpio. Si está muy sucio, con grasa o restos de comida: No reciclable."
-    },
-    {
-      "name": "Cartón (limpio y seco)",
-      "search_terms": [
-        "cartón",
-        "caja",
-        "caja de cartón",
-        "carton corrugado",
-        "caja de envio",
-        "cartón de huevo",
-        "tubos de cartón"
-      ],
-      "examples": [
-        "cajas de cereal",
-        "cajas de envío",
-        "cartón corrugado",
-        "cartón de huevo",
-        "tubos de rollo (sin exceso de suciedad)"
-      ],
-      "notes": "Aplastar. Quitar bolsas, burbujas y rellenos. Cinta adhesiva: retirar si es posible. Si está grasoso (ej. caja de pizza): No reciclable."
-    },
-    {
-      "name": "Corcholatas y tapas metálicas",
-      "search_terms": [
-        "corcholata",
-        "tapa metálica",
-        "tapa de cerveza",
-        "tapa de refresco",
-        "chapas"
-      ],
-      "examples": [
-        "corcholata de cerveza",
-        "corcholata de refresco",
-        "tapa metálica de frasco"
-      ],
-      "notes": "Limpias y secas. Para que no se pierdan, agruparlas dentro de una lata o frasco."
-    },
-    {
-      "name": "Aerosoles vacíos (metal)",
-      "search_terms": [
-        "aerosol",
-        "spray",
-        "desodorante aerosol",
-        "laca",
-        "insecticida"
-      ],
-      "examples": [
-        "desodorante en aerosol vacío",
-        "spray para cabello vacío",
-        "insecticida en aerosol vacío"
-      ],
-      "notes": "Solo si está totalmente vacío. Si tiene contenido, es manejo especial según acopio local."
-    },
-    {
-      "name": "Plástico PET (botellas)",
-      "search_terms": [
-        "pet",
-        "botella pet",
-        "botella de plástico",
-        "botella de agua",
-        "botella de refresco"
-      ],
-      "examples": [
-        "botella de agua",
-        "botella de refresco",
-        "botella de té embotellado"
-      ],
-      "notes": "Vacías, limpias, secas y aplastadas. Tapas: pueden dejarse puestas o separadas según tu servicio."
-    },
-    {
-      "name": "Plástico rígido (HDPE / PP)",
-      "search_terms": [
-        "plástico rígido",
-        "hdpe",
-        "pp",
-        "envase shampoo",
-        "envase detergente",
-        "bote plástico",
-        "tupper"
-      ],
-      "examples": [
-        "envase de shampoo",
-        "envase de detergente",
-        "botella de suavizante",
-        "bote de yogurt grande",
-        "cubeta de helado",
-        "tupper rígido"
-      ],
-      "notes": "Lavar y secar. Preferible con triángulo ♻️ 2 o 5. Si es tubo mixto (plástico+aluminio), no es reciclable."
-    },
-    {
-      "name": "Bolsas de plástico del súper y de verduras (limpias)",
-      "search_terms": [
-        "bolsa de plástico",
-        "bolsa del super",
-        "bolsa camiseta",
-        "bolsa de verduras",
-        "bolsa transparente"
-      ],
-      "examples": [
-        "bolsa de supermercado limpia",
-        "bolsa de pan limpia",
-        "bolsa de verduras o fruta limpia",
-        "bolsa tipo camiseta"
-      ],
-      "notes": "Solo limpias y secas. Si están muy sucias o grasosas: No reciclable. Si hay punto de acopio, es preferible llevarlas ahí."
-    },
-    {
-      "name": "Vidrio (botellas y frascos)",
-      "search_terms": [
-        "vidrio",
-        "botella de vidrio",
-        "frasco",
-        "envase de vidrio"
-      ],
-      "examples": [
-        "botellas",
-        "frascos",
-        "envases de vidrio de alimentos"
-      ],
-      "notes": "Vacíos y enjuagados. Sin tapa. Vasos, cristalería, cerámica, espejos y ventanas: No reciclables (manejo especial)."
-    },
-    {
-      "name": "Metales (latas)",
-      "search_terms": [
-        "lata",
-        "lata de aluminio",
-        "lata de conserva",
-        "lata de frijoles",
-        "lata de atún",
-        "metal"
-      ],
-      "examples": [
-        "lata de aluminio",
-        "lata de conserva",
-        "lata de frijoles",
-        "lata de atún",
-        "lata de verduras"
-      ],
-      "notes": "Enjuagar para evitar olores. Aplastar si se puede. Etiquetas: si se desprenden fácil, retirar; si no, no pasa nada mientras esté limpio."
-    },
-    {
-      "name": "Envases multicapa (Tetra Pak)",
-      "search_terms": [
-        "tetrapak",
-        "tetra pak",
-        "caja de leche",
-        "caja de jugo",
-        "envase multicapa"
-      ],
-      "examples": [
-        "caja de leche",
-        "caja de jugo",
-        "puré de tomate en caja",
-        "leche vegetal en caja"
-      ],
-      "notes": "Enjuagar, escurrir y aplastar. Si queda con líquidos o residuos pegados, pasa a No reciclable."
-    }
-  ]
-},
-    {
-  "id": "no_reciclables",
-  "label": "No Reciclables",
-  "color": "naranja",
-  "collection_days": ["Lunes", "Miércoles", "Viernes", "Domingo"],
-  "items": [
-    {
-      "name": "Residuos sanitarios",
-      "search_terms": [
-        "sanitario",
-        "pañales",
-        "toallas sanitarias",
-        "tampones",
-        "preservativos",
-        "condones",
-        "curitas",
-        "algodón",
-        "hisopos",
-        "cotonetes",
-        "pañuelos",
-        "papel de baño",
-        "sangre"
-      ],
-      "examples": [
-        "pañales",
-        "toallas sanitarias",
-        "tampones",
-        "preservativos",
-        "curitas",
-        "algodón",
-        "hisopos/cotonetes",
-        "pañuelos usados",
-        "papel de baño"
-      ],
-      "notes": "Basura sanitaria. Entregar en bolsa cerrada. Si hay sangre visible: doble bolsa y rotular 'SANITARIO'."
-    },
-    {
-      "name": "Toallitas húmedas y textiles de limpieza desechables",
-      "search_terms": [
-        "toallitas",
-        "toallitas húmedas",
-        "toallitas desinfectantes",
-        "paños desechables",
-        "servitoallas",
-        "trapos desechables"
-      ],
-      "examples": [
-        "toallitas húmedas (bebé/mascota)",
-        "toallitas desinfectantes",
-        "paños desechables",
-        "servitoallas con químicos"
-      ],
-      "notes": "Si solo tienen restos de comida: podrían ser orgánicos; si tienen químicos, baño o mascota: no reciclables."
-    },
-    {
-      "name": "Etiquetas adhesivas sueltas y stickers",
-      "search_terms": [
-        "etiqueta",
-        "sticker",
-        "calcomanía",
-        "precio",
-        "adhesivo",
-        "label"
-      ],
-      "examples": [
-        "etiquetas autoadheribles",
-        "sticker de precio",
-        "calcomanías",
-        "etiquetas plásticas pegajosas"
-      ],
-      "notes": "Material mixto con adhesivos: no reciclable."
-    },
-    {
-      "name": "Espumas y rellenos de embalaje (no unicel)",
-      "search_terms": [
-        "espuma",
-        "foam",
-        "relleno de embalaje",
-        "empaque",
-        "esponja de empaque"
-      ],
-      "examples": [
-        "foam de protección",
-        "esponja de empaque",
-        "relleno sintético de embalaje",
-        "espuma flexible"
-      ],
-      "notes": "No reciclables en recolección domiciliaria."
-    },
-    {
-      "name": "Empaques metalizados y multilaminados",
-      "search_terms": [
-        "metalizado",
-        "bolsa brillante",
-        "envoltura",
-        "papitas",
-        "galletas",
-        "chocolate",
-        "multipack",
-        "bolsa de croquetas"
-      ],
-      "examples": [
-        "bolsa de papitas",
-        "envoltura de galletas",
-        "envoltura de chocolate",
-        "bolsa de palomitas (interior brillante)",
-        "empaques de dulces múltiples",
-        "bolsas de croquetas/premios"
-      ],
-      "notes": "Material mixto o metalizado: no reciclable en camión."
-    },
-    {
-      "name": "Plástico termoencogible / envoltura transparente ajustada",
-      "search_terms": [
-        "termoencogible",
-        "plástico delgado",
-        "envoltura transparente",
-        "wrap",
-        "plástico de videojuegos",
-        "shrink wrap"
-      ],
-      "examples": [
-        "plástico que recubre cajas de videojuegos",
-        "plástico que envuelve paquetes múltiples",
-        "envoltura transparente muy delgada"
-      ],
-      "notes": "Difícil de recuperar en recolección domiciliaria. Si es muy delgado o va pegado, es no reciclable."
-    },
-    {
-      "name": "Empaques combinados cartón + plástico pegado",
-      "search_terms": [
-        "cartón plastificado",
-        "polipapel",
-        "vaso de café",
-        "ventana plástica",
-        "blister",
-        "empaque mixto"
-      ],
-      "examples": [
-        "vasos de café de cartón encerado",
-        "caja con ventana plástica pegada",
-        "charolas de cartón plastificado",
-        "blister de cartón con plástico"
-      ],
-      "notes": "Si no se separa fácil en partes limpias, va a no reciclable."
-    },
-    {
-      "name": "Unicel (poliestireno expandido)",
-      "search_terms": [
-        "unicel",
-        "poliestireno",
-        "vasos de unicel",
-        "charola de carne",
-        "plato de unicel"
-      ],
-      "examples": [
-        "vasos de unicel",
-        "platos de unicel",
-        "protecciones de envío",
-        "charolas de carne"
-      ],
-      "notes": "Romper para reducir volumen. Generalmente no reciclable en camión. Existen centros privados especializados."
-    },
-    {
-      "name": "Cajas de pizza (grasosas o con comida)",
-      "search_terms": [
-        "pizza",
-        "caja de pizza",
-        "cartón con grasa",
-        "cartón sucio"
-      ],
-      "examples": [
-        "caja con grasa de queso",
-        "cartón manchado de aceite"
-      ],
-      "notes": "La parte limpia puede ir a reciclables; lo grasoso va aquí."
-    },
-    {
-      "name": "Tubos y envases mixtos",
-      "search_terms": [
-        "tubo",
-        "pasta dental",
-        "crema",
-        "pomada",
-        "envase aluminio plástico"
-      ],
-      "examples": [
-        "tubo de pasta dental",
-        "tubo de crema",
-        "tubos de pomadas"
-      ],
-      "notes": "Material mixto: no reciclable. Frascos rígidos de plástico (2 o 5) sí pueden reciclarse si están limpios."
-    },
-    {
-      "name": "Polvo, barrido y filtros",
-      "search_terms": [
-        "polvo",
-        "barrido",
-        "pelusa",
-        "lint",
-        "aspiradora",
-        "filtro",
-        "aire acondicionado"
-      ],
-      "examples": [
-        "polvo de barrer",
-        "pelusa de secadora",
-        "residuos de aspiradora",
-        "filtros domésticos"
-      ],
-      "notes": "Mezcla de fibras y suciedad: no reciclable. Embolsar para evitar dispersión."
-    },
-    {
-      "name": "Parches y adhesivos de curación",
-      "search_terms": [
-        "parches",
-        "parche hidrocoloide",
-        "apósitos",
-        "curación",
-        "cinta médica"
-      ],
-      "examples": [
-        "parches hidrocoloides",
-        "apósitos adhesivos",
-        "parches para acné",
-        "cintas médicas usadas"
-      ],
-      "notes": "Por uso sanitario y adhesivos: no reciclable."
-    },
-    {
-      "name": "Rellenos y espumas domésticas",
-      "search_terms": [
-        "relleno",
-        "peluche",
-        "espuma",
-        "almohada",
-        "esponja"
-      ],
-      "examples": [
-        "relleno de peluches",
-        "espuma de almohada",
-        "relleno sintético",
-        "esponja vieja de trastes"
-      ],
-      "notes": "No reciclable."
-    },
-    {
-      "name": "Vidrio roto / cerámica / espejo / ventana",
-      "search_terms": [
-        "vidrio roto",
-        "vaso roto",
-        "taza rota",
-        "cerámica",
-        "espejo",
-        "ventana"
-      ],
-      "examples": [
-        "vaso roto",
-        "taza rota",
-        "plato de cerámica",
-        "espejo",
-        "vidrio de ventana"
-      ],
-      "notes": "⚠️ PELIGRO: No tirar suelto. Envolver en cartón grueso, encintar y rotular 'VIDRIO ROTO'."
-    }
-  ]
-},
-{
-  "id": "manejo_especial",
-  "label": "Manejo Especial",
-  "color": "azul",
-  "collection_days": ["Acopios", "Jornadas", "Programas especiales"],
-  "items": [
-    {
-      "name": "Aceite de cocina usado",
-      "search_terms": [
-        "aceite",
-        "aceite usado",
-        "aceite de freír",
-        "grasa"
-      ],
-      "examples": [
-        "aceite de freír",
-        "aceite vegetal usado",
-        "aceite escurrido de latas"
-      ],
-      "notes": "Dejar enfriar, filtrar, guardar en botella cerrada y etiquetar. Llevar a puntos de acopio o Mercado de Trueque."
-    },
-    {
-      "name": "Pilas y baterías",
-      "search_terms": [
-        "pilas",
-        "baterías",
-        "AA",
-        "AAA",
-        "botón",
-        "batería celular"
-      ],
-      "examples": [
-        "pilas AA/AAA",
-        "baterías de botón",
-        "batería de celular",
-        "powerbank dañado"
-      ],
-      "notes": "No tirarlas a la basura. Guardar en envase y llevar a acopio."
-    },
-    {
-      "name": "Medicamentos caducos",
-      "search_terms": [
-        "medicamentos",
-        "pastillas",
-        "jarabes",
-        "caducos",
-        "medicina"
-      ],
-      "examples": [
-        "pastillas vencidas",
-        "jarabes vencidos",
-        "sobres de medicamento"
-      ],
-      "notes": "Llevar a contenedores oficiales SINGREM en farmacias y centros participantes."
-    },
-    {
-      "name": "Jeringas y punzocortantes",
-      "search_terms": [
-        "jeringa",
-        "aguja",
-        "punzocortante",
-        "lanceta"
-      ],
-      "examples": [
-        "jeringas",
-        "agujas",
-        "lancetas"
-      ],
-      "notes": "Colocar en envase rígido a prueba de pinchazos, rotular y entregar en centros autorizados."
-    },
-    {
-      "name": "Electrónicos y cables",
-      "search_terms": [
-        "electrónicos",
-        "cables",
-        "USB",
-        "cargador",
-        "celular",
-        "audífonos"
-      ],
-      "examples": [
-        "cables USB",
-        "cargadores",
-        "audífonos",
-        "celulares",
-        "teclados",
-        "controles"
-      ],
-      "notes": "Llevar a jornadas o programas de acopio (p. ej., Reciclatrón)."
-    }
-  ]
-}
-]
 }
